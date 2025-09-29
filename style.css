@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.hero-section {
+  background: url("main-hero-bg.jpg") no-repeat center center/cover;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 40px;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.social-links a {
+  margin-left: 15px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  color: #ff0000;
+}
+
+.auth-links a {
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+
+.btn-log {
+  border: 1px solid #ffffff;
+  padding: 5px 15px;
+  margin-left: 30px !important;
+}
+
+.btn-register {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 5px 15px;
+  margin-left: 10px !important;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.logo img {
+  height: 80px;
+  vertical-align: middle;
+}
+
+.nav-links {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  gap: 30px;
+  margin-left: 40px;
+}
+
+.nav-links a {
+  padding: 20px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a.active {
+  color: #ff0000;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0000;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 150px 0 0 100px;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.event-info {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.btn-read-more {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 15px 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-read-more:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.latest-updates-title {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 2;
+  padding: 20px 0;
+}
+
+.latest-updates-section {
+  padding: 0 40px 40px;
+  background-color: #000000;
+  margin-top: -50px;
+  position: relative;
+  z-index: 5;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.update-card {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: 2px solid transparent;
+}
+
+.update-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff0000;
+}
+
+.update-card.moh {
+  background-image: url("1.jpg");
+}
+
+.update-card.supremacy {
+  background-image: url("2.jpg");
+}
+
+.update-card.syndicate {
+  background-image: url("3.jpg");
+}
+
+@media (max-width: 1200px) {
+  .main-title {
+    font-size: 3rem;
+  }
+  .hero-content {
+    margin: 100px 40px 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 5px;
+  }
+  .social-links {
+    margin-bottom: 10px;
+  }
+  .auth-links {
+    margin-left: 0;
+  }
+  .auth-links a:first-child {
+    margin-left: 0;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+    margin-left: 0;
+  }
+  .search-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .hero-content {
+    margin: 50px 20px 0 20px;
+    max-width: 100%;
+  }
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .latest-updates-title {
+    left: 20px;
+  }
+
+  .latest-updates-section {
+    padding: 0 20px 20px;
+  }
+
+  .updates-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
